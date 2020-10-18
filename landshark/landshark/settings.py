@@ -33,12 +33,15 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
+    'listings.apps.ListingsConfig',
+    'realtors.apps.RealtorsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humaniz'
 ]
 
 MIDDLEWARE = [
@@ -77,8 +80,11 @@ WSGI_APPLICATION = 'landshark.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'landsharkdb',
+        'USER': 'postgres',
+        'PASSWORD': 'Dragon0216',
+        'HOST':'localhost'
     }
 }
 
@@ -125,3 +131,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[
     os.path.join(BASE_DIR, 'landshark/static')
 ]
+
+# Media Folder Settings
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
