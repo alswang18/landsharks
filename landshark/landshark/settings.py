@@ -26,7 +26,7 @@ SECRET_KEY = 'j8pw_ue9s63fcbx(=k*unoyriobf%@426^yb)0+@yj$my1=q$o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -83,10 +83,11 @@ WSGI_APPLICATION = 'landshark.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'landsharkdb',
+        'NAME': 'postgres',
         'USER': 'postgres',
-        'PASSWORD': 'Dragon0216',
-        'HOST':'localhost'
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
     }
 }
 
